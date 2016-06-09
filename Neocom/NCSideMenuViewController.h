@@ -13,19 +13,24 @@
 #define NCSideMenuViewControllermPanWidth 30.0
 
 @class NCSideMenuViewController;
-@interface UIViewController(NCSideMenuViewController)
-@property (nonatomic, weak, readonly) NCSideMenuViewController* sideMenuViewController;
+
+@interface UIViewController (NCSideMenuViewController)
+@property(nonatomic, weak, readonly) NCSideMenuViewController *sideMenuViewController;
 
 @end
 
 @interface NCSideMenuViewController : UIViewController
-@property (nonatomic, strong) IBOutlet UIViewController* menuViewController;
-@property (nonatomic, strong) IBOutlet UIViewController* contentViewController;
-@property (nonatomic, assign, getter = isMenuVisible) BOOL menuVisible;
-@property (nonatomic, assign, getter = isFullScreen) BOOL fullScreen;
+@property(nonatomic, strong) IBOutlet UIViewController *menuViewController;
+@property(nonatomic, strong) IBOutlet UIViewController *contentViewController;
+@property(nonatomic, assign, getter = isMenuVisible) BOOL menuVisible;
+@property(nonatomic, assign, getter = isFullScreen) BOOL fullScreen;
+@property(assign, readwrite) BOOL menuOnTop;
 
-- (void) setContentViewController:(UIViewController *)contentViewController animated:(BOOL)animated;
-- (void) setMenuVisible:(BOOL)menuVisible animated:(BOOL)animated;
-- (void) setFullScreen:(BOOL)fullScreen animated:(BOOL)animated;
+- (void)setContentViewController:(UIViewController *)contentViewController animated:(BOOL)animated;
+
+- (void)setMenuVisible:(BOOL)menuVisible animated:(BOOL)animated;
+
+- (void)setFullScreen:(BOOL)fullScreen animated:(BOOL)animated;
+
 - (IBAction)onMenu:(id)sender;
 @end
